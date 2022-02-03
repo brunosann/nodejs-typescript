@@ -1,0 +1,33 @@
+{{>partials/header}}
+<div>Ola, tanks? bão {{ name }} sua idade é de {{ age }}</div>
+{{#show}}
+<h1>Mostrou</h1>
+{{/show}}
+
+<h3>Produtos</h3>
+<ul>
+  {{#products}}
+    {{>partials/product}}
+  {{/products}}
+</ul>
+
+<h3>Produtos a partir de R$ 5</h3>
+<ul>
+  {{#expensiveProducts}}
+    {{>partials/product}}
+  {{/expensiveProducts}}
+</ul>
+
+<hr />
+
+<h3>Frases</h3>
+<ul>
+  {{#todo}}
+    <li>{{.}}</li>
+  {{/todo}}
+  {{! se não tiver items na lista a syntax abaixo é um elese }}
+  {{^todo}}
+    <h4>sem frase</h4>
+  {{/todo}}
+</ul>
+{{>partials/footer}}
